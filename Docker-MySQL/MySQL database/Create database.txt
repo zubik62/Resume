@@ -1,0 +1,85 @@
+1.CREATE DATABASE BSPB;
+
+2.USE BSPB;
+
+3.CREATE TABLE Clients (
+ID INT NOT NULL, 
+PRIMARY KEY(ID), 
+Name VARCHAR(30), 
+Surname VARCHAR(30), 
+Age INT);
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| ID      | int         | NO   | PRI | NULL    |       |
+| Name    | varchar(30) | YES  |     | NULL    |       |
+| Surname | varchar(30) | YES  |     | NULL    |       |
+| Age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+
+4.CREATE TABLE Authorization (
+ID INT NOT NULL, 
+Login VARCHAR(30), 
+Password VARCHAR(30), 
+Client_ID INT, 
+FOREIGN KEY(Client_ID) REFERENCES Clients (ID));
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   |     | NULL    |       |
+| Login     | varchar(30) | YES  |     | NULL    |       |
+| Password  | varchar(30) | YES  |     | NULL    |       |
+| Client_ID | int         | YES  | MUL | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
+5.CREATE TABLE Clients_message (
+ID INT NOT NULL, 
+Message TEXT, 
+Clients_ID INT, 
+FOREIGN KEY(Clients_ID) REFERENCES Clients (ID));
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| ID         | int  | NO   |     | NULL    |       |
+| Message    | text | YES  |     | NULL    |       |
+| Clients_ID | int  | YES  | MUL | NULL    |       |
++------------+------+------+-----+---------+-------+
+
+6.CREATE TABLE Clients_balance (
+ID INT NOT NULL, 
+Balance DECIMAL(12,2), 
+Clients_ID INT, 
+FOREIGN KEY(Clients_ID) REFERENCES Clients(ID));
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| ID         | int           | NO   |     | NULL    |       |
+| Balance    | decimal(12,2) | YES  |     | NULL    |       |
+| Clients_ID | int           | YES  | MUL | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+
+
+Проверка связей таблиц
+SELECT Name, Surname, Age, Message, Clients_ID 
+FROM Clients 
+INNER JOIN Clients_message 
+ON Clients.ID=Clients_message.Clients_ID 
+WHERE Clients_ID=2;
++------+----------+------+------------------------------+------------+
+| Name | Surname  | Age  | Message                      | Clients_ID |
++------+----------+------+------------------------------+------------+
+| Mark | Peterson |   40 | Not enouth money             |          2 |
+| Mark | Peterson |   40 | Try again                    |          2 |
+| Mark | Peterson |   40 | You created new bank product |          2 |
++------+----------+------+------------------------------+------------+
+
+SELECT Name, Surname, Age, Message, Clients_ID 
+FROM Clients 
+INNER JOIN Clients_message 
+ON Clients.ID=Clients_message.Clients_ID 
+WHERE Clients_ID=1;
++--------+---------+------+------------------------------------+------------+
+| Name   | Surname | Age  | Message                            | Clients_ID |
++--------+---------+------+------------------------------------+------------+
+| Eugene | Zaikin  |   30 | Your message was successfully sent |          1 |
++--------+---------+------+------------------------------------+------------+

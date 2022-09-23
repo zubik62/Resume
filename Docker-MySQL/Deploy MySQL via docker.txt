@@ -1,0 +1,12 @@
+docker pull mysql:latest
+Загружает последнюю версию образа
+
+docker run --name mysql1 -e MYSQL_ROOT_PASSWORD=123 -d mysql
+Создает контейнер из образа mysql с названием mysql1 и паролем 123
+
+winpty docker exec -it mysql1 bash
+Создает новую сессию Bash в контейнере mysql1
+
+mysql -u root -p
+Enter password:123
+Вход в mysql
