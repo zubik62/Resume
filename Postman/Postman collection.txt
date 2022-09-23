@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "eee042fe-149d-40c9-9d4c-33b1234427b3",
+		"name": "BSPB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21641715"
+	},
+	"item": [
+		{
+			"name": "New user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Статус код 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Время ответа меньше 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"В теле ответа приходит code, type и message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"code\", \"type,\", \"message\");\r",
+							"});\r",
+							"pm.test(\"Имя статус кода OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"Zub\",\r\n  \"firstName\": \"Eugene\",\r\n  \"lastName\": \"Zaikin\",\r\n  \"email\": \"skaterzub@yandex.ru\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"+79105555555\",\r\n  \"userStatus\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlBSPB}}/user",
+					"host": [
+						"{{urlBSPB}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Статус код 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Время ответа меньше 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"В теле ответа приходит code, type и message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"code\", \"type,\", \"message\");\r",
+							"});\r",
+							"pm.test(\"Имя статус кода OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlBSPB}}/user/login?username=Zub&password=12345",
+					"host": [
+						"{{urlBSPB}}"
+					],
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "Zub"
+						},
+						{
+							"key": "password",
+							"value": "12345"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Статус код 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Время ответа меньше 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"В теле ответа приходит code, type и message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"code\", \"type,\", \"message\");\r",
+							"});\r",
+							"pm.test(\"Имя статус кода OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"username\": \"Zub\",\r\n  \"firstName\": \"Eugene\",\r\n  \"lastName\": \"Zaikin\",\r\n  \"email\": \"skaterzub@yandex.ru\",\r\n  \"password\": \"12345\",\r\n  \"phone\": \"+79107777777\",\r\n  \"userStatus\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlBSPB}}/user/Zub",
+					"host": [
+						"{{urlBSPB}}"
+					],
+					"path": [
+						"user",
+						"Zub"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Статус код 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Время ответа меньше 1000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							"pm.test(\"В теле ответа приходит code, type и message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"code\", \"type,\", \"message\");\r",
+							"});\r",
+							"pm.test(\"Имя статус кода OK\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{urlBSPB}}/user/Zub",
+					"host": [
+						"{{urlBSPB}}"
+					],
+					"path": [
+						"user",
+						"Zub"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
