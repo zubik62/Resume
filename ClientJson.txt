@@ -1,0 +1,31 @@
+{
+    "Id":"5632",
+    "Name":"Ольга",
+    "Surname":"Королёва",
+    "Age":"45",
+    "Passport":[
+      {
+        "Date of issue":"13.06.2022",
+        "Passport series and number": "6000 358467",
+        "Division code":"500-477"
+      }
+      ],
+    "Cards":[
+      {
+      "Travel":"4797 29** **** 6192",
+        "Status":"Valid"
+      },
+      {
+      "Золотая":"4797 72** **** 2224",
+        "Status":"Valid"
+      },
+      {
+      "Яркая":"5178 85** **** 9074",
+        "Status":"Blocked"
+      },
+      {
+      "Electron":"4797 69** **** 0556",
+      "Status":"Valid"
+      }
+    ]
+}
