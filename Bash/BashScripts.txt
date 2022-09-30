@@ -3,6 +3,7 @@ echo "Задачи на сегодня:"
 echo "Разработать тест кейсы для новых требований"
 echo "Провести ретест пофикшеных багов""
 
+
 #!/bin/bash
 # Справочник по командам
 # mkdir,pwd,ls,rm,cat,touch
@@ -32,6 +33,7 @@ if [[ $command = ls ]]
 then
         ls --help
 fi
+
 
 #!/bin/bash
 date +%H:%M
