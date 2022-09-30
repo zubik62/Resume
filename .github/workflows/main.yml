@@ -8,7 +8,7 @@ on:
 
 jobs:
   my_testing:
-    runs-on: ubuntu-latestaaa
+    runs-on: ubuntu-latest
 
     
     steps:
