@@ -1,0 +1,46 @@
+#!/bin/bash
+echo "Задачи на сегодня:"
+echo "Разработать тест кейсы для новых требований"
+echo "Провести ретест пофикшеных багов""
+
+#!/bin/bash
+# Справочник по командам
+# mkdir,pwd,ls,rm,cat,touch
+echo "Введи название команды по которой нужна справка:"
+read command
+if [[ $command = mkdir ]]
+then
+        mkdir --help
+fi
+if [[ $command = rm ]]
+then
+        rm --help
+fi
+if [[ $command = cat ]]
+then
+        cat --help
+fi
+if [[ $command = touch ]]
+then
+        touch --help
+fi
+if [[ $command = pwd ]]
+then
+        pwd --help
+fi
+if [[ $command = ls ]]
+then
+        ls --help
+fi
+
+#!/bin/bash
+date +%H:%M
+realtime=$(date +%H%M)
+time=0900
+if [[ $((10#$realtime)) -le $((10#$time)) ]]
+then
+  echo "Молодец что не опоздал"
+elif [[ $((10#$realtime)) -gt $((10#$time)) ]]
+then
+  echo "Ты почти уволен"
+fi
