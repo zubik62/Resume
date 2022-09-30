@@ -1,0 +1,16 @@
+name: TestActions
+
+on:
+ push:
+   branches: 
+     - main
+
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+
+    
+    steps:
+      - name: Pring Hello Message
+        run: echo "Hello everybody, this is my first job"
