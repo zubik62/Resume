@@ -8,6 +8,7 @@ Status of Last Deployment:<br>
 Postman коллекция с автотестами,
 Запуск коллекции Postman через newman,
 Bash команды,
+Bash скрипты,
 Развертывание MySQL через Docker,
 БД в MySQL,
 Json клиента,
