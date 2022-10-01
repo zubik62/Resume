@@ -33,6 +33,25 @@ if [[ $command = ls ]]
 then
         ls --help
 fi
+if [[ $command != mkdir ]]
+then
+ if [[ $command != rm ]]
+then
+  if [[ $command != pwd ]]
+then
+   if [[ $command != ls ]]
+then
+    if [[ $command != cat ]]
+then
+     if [[ $command != touch ]]
+then
+echo "Команда не найдена"
+     fi
+    fi
+   fi
+  fi
+ fi
+fi
 
 
 #!/bin/bash
