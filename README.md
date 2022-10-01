@@ -12,4 +12,4 @@ Bash скрипты,
 Развертывание MySQL через Docker,
 БД в MySQL,
 Json клиента,
-Подмена данных с Charles.
+Подмена данных с Charles.ю
