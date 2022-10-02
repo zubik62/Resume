@@ -1,4 +1,3 @@
-<br>
 <img src="https://github.com/zubik62/Test/workflows/TestActions/badge.svg?branch=main"><br>
 
 В этом репозитории собраны файлы финального проекта по тестированию демо сайта и не только:
