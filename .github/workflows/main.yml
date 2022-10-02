@@ -6,7 +6,7 @@ on:
      - main
 
 
-jobs:
+jobsd:
   my_testing:
     runs-on: ubuntu-latest
 
