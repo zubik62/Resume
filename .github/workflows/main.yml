@@ -8,7 +8,7 @@ on:
 
 jobs:
   my_testing:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestь
 
     
     steps:
