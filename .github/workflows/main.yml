@@ -8,7 +8,7 @@ on:
 
 jobs:
   my_testing:
-    runs-on: ubuntкпрu-lateераерst
+    runs-on: ubuntu-latest
 
     
     steps:
@@ -23,6 +23,6 @@ jobs:
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
+          to: ${{ secrets.TELEGRAM_TOа }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: ✅ Были внесены изменения
