@@ -14,3 +14,15 @@ jobs:
     steps:
       - name: Pring Hello Message
         run: echo "Hello everybody, this is my first job"
+        
+        
+  build:
+    name: Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ✅ Всё прошло успешно
