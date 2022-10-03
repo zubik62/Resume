@@ -28,7 +28,7 @@ jobs:
           message: ✅ Были внесены изменения
           
 
-  DokcerlLogin:
+  Docker_Login:
     runs-on: ubuntu-latest
     steps:
       -
