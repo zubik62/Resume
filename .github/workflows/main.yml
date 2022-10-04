@@ -1,6 +1,6 @@
 name: TestActions
 
- on:
+on:
  push:
    branches: 
      - main
